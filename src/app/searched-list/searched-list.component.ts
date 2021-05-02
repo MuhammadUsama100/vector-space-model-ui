@@ -28,7 +28,7 @@ export class SearchedListComponent implements OnInit {
     this.query  =  this.route.snapshot.paramMap.get("query");
     console.log(this.query)
     
-    this.http.post<Result>("https://65.2.9.123:5000/process-query/" , {"query":  this.query} , {headers: new HttpHeaders({
+    this.http.post<Result>("http://65.2.9.123:5000/process-query" , {"query":  this.query} , {headers: new HttpHeaders({
       'Content-Type':  'application/json',
     })}).subscribe(data => {
      let list = data.resultset["result-doc-set"]
